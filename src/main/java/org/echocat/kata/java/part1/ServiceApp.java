@@ -1,6 +1,9 @@
 package org.echocat.kata.java.part1;
 
 
+import org.echocat.kata.java.part1.Service.AuthorParcer;
+import org.echocat.kata.java.part1.Service.BookParcer;
+import org.echocat.kata.java.part1.Service.MagazineParcer;
 import org.echocat.kata.java.part1.Service.ProcessService;
 
 
@@ -17,7 +20,7 @@ import org.springframework.context.annotation.Import;
 @SuppressWarnings("UseOfSystemOutOrSystemErr")
 @SpringBootConfiguration
 @Import({
-        ProcessService.class,
+        ServiceConfig.class
 })
 public class ServiceApp implements CommandLineRunner {
 
