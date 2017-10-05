@@ -79,7 +79,7 @@ public class ProcessService {
        Publishable result = publishables
                .filter(p->p.getIsbn().equals(isbn))
                .findFirst().orElse(null);
-       System.out.println("Isbn:"+ isbn+"is: book"+ result.getTitle());
+       System.out.println("Isbn:"+ isbn+"is titled:"+ result.getTitle());
    }
 
     public void findByEmail(Stream<Publishable>  publishables, String email){
