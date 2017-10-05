@@ -76,17 +76,16 @@ public class ProcessService {
     }
 
    public void findByIsbn(Stream<Publishable> publishables, String isbn){
-       Publishable result = publishables
+       publishables
                .filter(p->p.getIsbn().equals(isbn))
-               .findFirst().orElse(null);
-       System.out.println("Isbn:"+ isbn+"is titled:"+ result.getTitle());
+               .forEach(u -> System.out.println("Isbn:"+ isbn+"is titled:"+ u.getTitle()));
    }
 
     public void findByEmail(Stream<Publishable>  publishables, String email){
         publishables
                 .flatMap(publishable -> publishable.getAuthors().stream())
                 .filter(author-> author.equals(email))
-                .forEach(u -> System.out.println());
+                .forEach(System.out::println);
     }
 
     public void sortByTitle(Stream<Publishable>  publishables){
