@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Import;
 @SuppressWarnings("UseOfSystemOutOrSystemErr")
 @SpringBootConfiguration
 @Import({
-        ServiceApp.class,
+        ProcessService.class,
 })
 public class ServiceApp implements CommandLineRunner {
 
@@ -33,9 +33,9 @@ public class ServiceApp implements CommandLineRunner {
 
     @Override
     public void run(String... strings) throws Exception {
-        LOG.info("Starting with station creation process...");
+        LOG.info("Starting with kata process...");
         processService.processAll();
-        LOG.info("Finshed with station creation process.");
+        LOG.info("Finshed with kata process.");
     }
 
     public static void main(String[] args) throws Exception {
