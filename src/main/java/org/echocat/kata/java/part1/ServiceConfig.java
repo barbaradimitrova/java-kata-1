@@ -18,4 +18,20 @@ public class ServiceConfig {
             @Nonnull AuthorParcer authorParcer) {
         return new ProcessService(bookParcer, magazineParcer, authorParcer);
     }
+    @Bean
+    public BookParcer bookParcer() {
+        return new BookParcer();
+    }
+
+    @Bean
+    public MagazineParcer magazineParcer() {
+        return new MagazineParcer();
+    }
+
+    @Bean
+    public AuthorParcer authorParcer() {
+        return new AuthorParcer();
+    }
+
 }
+
